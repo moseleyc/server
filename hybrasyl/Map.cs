@@ -238,7 +238,7 @@ namespace Hybrasyl
                 var npcTemplate = World.WorldData.Get<Xml.Npc>(npcElement.Name);
                 if (npcTemplate == null)
                 {
-                    GameLog.Error("map ${Name}: NPC ${npcElement.Name} is missing, will not be loaded");
+                    GameLog.Error($"map {Name}: NPC {npcElement.Name} is missing, will not be loaded");
                     continue;
                 }
                 var merchant = new Merchant

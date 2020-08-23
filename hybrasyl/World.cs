@@ -337,7 +337,7 @@ namespace Hybrasyl
                     Xml.Map newMap = Xml.Map.LoadFromFile(xml);
                     var map = new Map(newMap, this);
                     if (!WorldData.SetWithIndex(map.Id, map, map.Name))
-                        GameLog.ErrorFormat("SetWithIndex fail for {map.Name}..?");
+                        GameLog.ErrorFormat($"SetWithIndex fail for {map.Name}..?");
                     GameLog.Info("Maps: Loaded {filename} ({mapname})", Path.GetFileName(xml), map.Name);
                 }
                 catch (Exception e)
