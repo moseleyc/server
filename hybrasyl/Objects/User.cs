@@ -1519,12 +1519,12 @@ namespace Hybrasyl.Objects
                 foreach (var castmodifier in Equipment.Weapon.CastModifiers)
                 {
                     // Matches most to least specific, first match wins
-                    if (castmodifier.Castable != string.Empty && castmodifier.Castable.ToLower() == castable.Name.ToLower())
+                    if (!string.IsNullOrWhiteSpace(castmodifier.Castable) && castmodifier.Castable.ToLower() == castable.Name.ToLower())
                     {
                         modifier = castmodifier.Item;
                         break;
                     }
-                    else if (castmodifier.Group != string.Empty && castable.Categories.Select(x => x.Value.ToLower()).Contains(castmodifier.Group.ToLower()))
+                    else if (!string.IsNullOrWhiteSpace(castmodifier.Group) && castable.Categories.Select(x => x.Value.ToLower()).Contains(castmodifier.Group.ToLower()))
                     {
                         modifier = castmodifier.Item;
                         break;

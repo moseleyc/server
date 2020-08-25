@@ -2374,6 +2374,7 @@ namespace Hybrasyl
                             }
                         }
                     }
+                    user.SendSpells();
                     break;
             }
         }
@@ -3596,6 +3597,7 @@ namespace Hybrasyl
                 GameLog.DebugFormat("Adding item {0}, count {1} to inventory", item.Name, item.Count);
                 user.AddItem(item);
                 GameLog.DebugFormat("Player weight is now {0}", user.CurrentWeight);
+                user.SendSpells();
             }
             else
             {
